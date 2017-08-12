@@ -14,7 +14,10 @@
     - "software-properties-common"
 
 - name: Docker - download install script
-  command: "curl https://get.docker.com/ > /tmp/install.sh && chmod +x /tmp/install.sh"
+  command: "curl https://get.docker.com/ > /tmp/install.sh"
+
+- name: Docker - chmod script
+  command: "chmod +x /tmp/install.sh"
 
 - name: Docker - install
   command: "/tmp/install.sh"
