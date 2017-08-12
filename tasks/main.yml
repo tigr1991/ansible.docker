@@ -1,0 +1,20 @@
+---
+- name: Update apt cache # apt-get update
+  apt:
+    update_cache: yes
+
+- name: Install required packages for Docker # apt-get install apt-transport-https ca-certificates curl software-properties-common -y
+  apt:
+    name: {{ item }}
+    install_recommends: yes
+  with_items:
+    apt-transport-https
+    ca-certificates
+    curl
+    software-properties-common
+
+- name: Docker - download install script
+  command: curl https://get.docker.com/ > /tmp/install.sh && chmod +x /tmp/install.sh
+
+- name: Docker - install
+  command: /tmp/install.sh
