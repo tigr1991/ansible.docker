@@ -3,8 +3,8 @@
   apt:
     update_cache: yes
 
-- name: Install required packages for Docker # apt-get install apt-transport-https ca-certificates curl software-properties-common -y
-  apt: name={{ item }} install_recommends=yes
+- name: Install required packages for Docker # apt-get install apt-transport-https ca-certificates curl software-properties-common
+  apt: name={{ item }}
   with_items:
     apt-transport-https
     ca-certificates
