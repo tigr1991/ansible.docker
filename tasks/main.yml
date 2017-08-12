@@ -18,6 +18,3 @@
 
 - name: Docker - chmod script
   command: "chmod +x /tmp/install.sh"
-
-- name: Docker - install
-  command: "/tmp/install.sh"
