@@ -17,9 +17,7 @@
   get_url:
     url: "https://get.docker.com/"
     dest: "/tmp/install.sh"
-
-- name: Docker - chmod script
-  command: "chmod +x /tmp/install.sh"
+    mode: 0755
 
 - name: Docker - install
   command: "/tmp/install.sh"
